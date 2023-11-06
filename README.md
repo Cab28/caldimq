@@ -8,12 +8,12 @@ Calculations of dimensionless quantities <br>
 ## Примеры использования
 
 **Формула нахождения числа Маха:**
-$${\displaystyle \mathrm {Ma} ={\frac {{\mathrm {v} }}{{\mathrm {c} }}} }$$
+$${\displaystyle \mathrm {M} ={\frac {{\mathrm {v} }}{{\mathrm {c} }}} }$$
 <br>
 **На php:**
 ```php
-$Ma = new Mach_Number(360,300);
-echo $Ma->calc(); // Вывод 1.2
+$M = new Mach_Number(360,300);
+echo $M->calc(); // Вывод 1.2
 ```
 
 ## Структура директорий
