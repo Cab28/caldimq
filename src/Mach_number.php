@@ -7,7 +7,7 @@ class Mach_Number
     /* Скорость звука */
     protected int|float $c;
 
-    public function __construct($v,$c) 
+    public function __construct(int|float $v, int|float $c) 
     {
         $this->v = $v;
         $this->c = $c;
