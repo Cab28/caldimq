@@ -2,56 +2,24 @@
 use DivisionByZeroException;
 final class Mach_Number
 {
-    /* Скорость потока */
-    protected int|float $v;
-    /* Скорость звука */
-    protected int|float $c;
-    /* Число Маха */
-    protected int|float $M;
-
-    public function __construct() 
+    public static function calculateMach(int|float $velocity, int|float $c): int|float
     {
-        
-    }
-    
-    public function setV(int|float $v): Mach_Number
-    {
-        $this->v = $v;
-        return $this;
-    }
-    
-    public function getV()
-    {
-        return $this->v;
-    }
-    
-    public function setC(int|float $c): Mach_Number
-    {
-        $this->c = $c;
-        return $this;
-    }
-    
-    public function getC()
-    {
-        return $this->c;
-    }
-    
-    public function setM(int|float $M): Mach_Number
-    {
-        $this->M = $M;
-        return $this;
-    }
-    
-    public function getM()
-    {
-        return $this->M;
-    }
-    
-    public function calc(): int|float
-    {
-        if (!$this->c) {
+        if (!$c) {
             throw new DivisionByZeroException();
         }
-        return $this->v / $this->c;
+        return $velocity / $c;
+    }
+    
+    public static function calculateVelocity(int|float $c, int|float $M): int|float
+    {
+        return $c * $M;
+    }
+    
+    public static function calculateCurrentAir(int|float $velocity, int|float $M): int|float
+    {
+        if (!$M) {
+            throw new DivisionByZeroException();
+        }
+        return $velocity / $M;
     }
 }
