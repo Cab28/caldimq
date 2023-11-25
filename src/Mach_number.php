@@ -2,24 +2,24 @@
 use DivisionByZeroException;
 final class Mach_Number
 {
-    public static function calculateMach(int|float $velocity, int|float $c): int|float
+    public static function Mach(int|float $object_speed, int|float $speed_sound): int|float
     {
-        if (!$c) {
+        if (!$speed_sound) {
             throw new DivisionByZeroException();
         }
-        return $velocity / $c;
+        return $object_speed / $speed_sound;
     }
     
-    public static function calculateVelocity(int|float $c, int|float $M): int|float
+    public static function ObjectSpeed(int|float $speed_sound, int|float $Mach): int|float
     {
-        return $c * $M;
+        return $speed_sound * $Mach;
     }
     
-    public static function calculateCurrentAir(int|float $velocity, int|float $M): int|float
+    public static function SpeedSound(int|float $object_speed, int|float $Mach): int|float
     {
         if (!$M) {
             throw new DivisionByZeroException();
         }
-        return $velocity / $M;
+        return $object_speed / $Mach;
     }
 }
