@@ -17,7 +17,7 @@ final class Mach_Number
     
     public static function SpeedSound(int|float $object_speed, int|float $Mach): int|float
     {
-        if (!$M) {
+        if (!$Mach) {
             throw new DivisionByZeroException();
         }
         return $object_speed / $Mach;
